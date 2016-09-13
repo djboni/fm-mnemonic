@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 # por Djones A. Boni <djboni gmail com>
+
 M2B = {}; B2M = {}; M = "\
 0123456789ABCDEFGHIJKLMNOPQRSTUV\
 WXYZ!!!!!:;<=>?@#$%&()*+,-./!!~_"
@@ -22,6 +23,16 @@ def mne2bin(mnemonic):
     return r
 
 if __name__ == "__main__":
-    mnemonic = "OVSPD"
-    binvalue = mne2bin(mnemonic)
-    print "%s = %s" % (mnemonic, binvalue)
+    mnelist = [
+            "OVSPD",
+            "OVREV",
+            "HRACC",
+            "HRBRK",
+            "EXIDL",
+            "HITMP",
+            "LOPRS",
+            "LOLVL",
+    ]
+    for mnemonic in mnelist:
+        binvalue = mne2bin(mnemonic)
+        print "%s = %s" % (mnemonic, binvalue)
